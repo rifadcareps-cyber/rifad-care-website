@@ -56,6 +56,30 @@ h2{font-family:'Reem Kufi',sans-serif;font-weight:600;font-size:clamp(30px,5vw,4
 .contact{text-align:center}
 .contact .rows{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;margin:26px 0 32px;font-size:18px}
 footer{background:var(--ink);color:var(--mint);text-align:center;padding:22px;font-size:14.5px;border-top:1px solid #1d4a3f}
+.gallery .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.ph{aspect-ratio:4/3;border-radius:18px;background:var(--ink);color:var(--mint);display:grid;place-items:center;text-align:center;font-size:15px;overflow:hidden;border:2px solid var(--gold)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph svg{width:56px;height:56px;fill:none;stroke:var(--gold);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;display:block;margin:0 auto 8px}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+blockquote{border-inline-start:4px solid var(--gold);padding:4px 18px}
+blockquote p{font-size:18px;color:var(--ink)}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:15px;color:#456158}
+.faq{background:var(--wash)}
+details{border-top:2px solid var(--gold);padding:16px 0;max-width:720px}
+summary{cursor:pointer;font-weight:700;font-size:19px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--green);font-size:26px;line-height:1}
+details[open] summary:after{content:"\2212"}
+details p{margin-top:10px;color:#456158}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 20px;max-width:760px}
+.form label{display:block;font-weight:700;color:var(--ink);font-size:16px}
+.form input,.form select,.form textarea{display:block;width:100%;margin-top:6px;min-height:50px;padding:10px 14px;border:2px solid #b9d3c8;border-radius:14px;font:400 17px 'Tajawal',sans-serif;color:var(--text);background:#fff}
+.form textarea{min-height:110px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--green);outline:3px solid var(--mint)}
+.form .full{grid-column:1/-1}
+.form .btn{border-color:var(--ink);background:var(--ink);color:var(--gold)}
+.note{font-size:15px;color:#456158}
+.contact{background:var(--wash)}
 @media(prefers-reduced-motion:reduce){.pulse path{animation:none;stroke-dashoffset:0}.pulse .heart{animation:none;opacity:1}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -73,7 +97,7 @@ footer{background:var(--ink);color:var(--mint);text-align:center;padding:22px;fo
 <div class="wrap">
 <a class="brand" href="#top" aria-label="Rifad"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#C9A54B" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 16 17 4l14 12v13H3z"/><path d="M17 13v10M12 18h10"/></svg><span class="ar">رفاد</span><span class="en">Rifad</span></a>
 <button class="btn line sm" id="lang" type="button"><span class="ar">EN</span><span class="en">عربي</span></button>
-<a class="btn fill sm" href="#contact"><span class="ar">احجز الآن</span><span class="en">Book now</span></a>
+<a class="btn fill sm" href="#book"><span class="ar">احجز الآن</span><span class="en">Book now</span></a>
 </div>
 </header>
 
@@ -122,6 +146,20 @@ footer{background:var(--ink);color:var(--mint);text-align:center;padding:22px;fo
 </div>
 </section>
 
+<section class="gallery" id="gallery">
+<div class="wrap">
+<h2><span class="ar">معرض الصور</span><span class="en">Gallery</span></h2>
+<div class="grid">
+<div class="ph"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8v10H3zM12 10v7M8.5 13.5h7"/></svg><span class="ar">ضع صورة هنا</span><span class="en">Add a photo here</span></div></div>
+<div class="ph"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8v10H3zM12 10v7M8.5 13.5h7"/></svg><span class="ar">ضع صورة هنا</span><span class="en">Add a photo here</span></div></div>
+<div class="ph"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8v10H3zM12 10v7M8.5 13.5h7"/></svg><span class="ar">ضع صورة هنا</span><span class="en">Add a photo here</span></div></div>
+<div class="ph"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8v10H3zM12 10v7M8.5 13.5h7"/></svg><span class="ar">ضع صورة هنا</span><span class="en">Add a photo here</span></div></div>
+<div class="ph"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8v10H3zM12 10v7M8.5 13.5h7"/></svg><span class="ar">ضع صورة هنا</span><span class="en">Add a photo here</span></div></div>
+<div class="ph"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8v10H3zM12 10v7M8.5 13.5h7"/></svg><span class="ar">ضع صورة هنا</span><span class="en">Add a photo here</span></div></div>
+</div>
+</div>
+</section>
+
 <section class="about">
 <div class="wrap">
 <h2><span class="ar">عبد العزيز عابد</span><span class="en">Abdulaziz Abed</span></h2>
@@ -130,15 +168,52 @@ footer{background:var(--ink);color:var(--mint);text-align:center;padding:22px;fo
 </div>
 </section>
 
+<section class="testimonials" id="reviews">
+<div class="wrap">
+<h2><span class="ar">آراء العملاء</span><span class="en">What families say</span></h2>
+<div class="quotes">
+<blockquote><p><span class="ar">اكتب هنا رأي العميل الحقيقي.</span><span class="en">Write a real client review here.</span></p><cite><span class="ar">اسم العميل</span><span class="en">Client name</span></cite></blockquote>
+<blockquote><p><span class="ar">اكتب هنا رأي العميل الحقيقي.</span><span class="en">Write a real client review here.</span></p><cite><span class="ar">اسم العميل</span><span class="en">Client name</span></cite></blockquote>
+<blockquote><p><span class="ar">اكتب هنا رأي العميل الحقيقي.</span><span class="en">Write a real client review here.</span></p><cite><span class="ar">اسم العميل</span><span class="en">Client name</span></cite></blockquote>
+</div>
+</div>
+</section>
+
+<section class="faq" id="faq">
+<div class="wrap">
+<h2><span class="ar">أسئلة شائعة</span><span class="en">Common questions</span></h2>
+<details><summary><span><span class="ar">كيف أطلب زيارة تمريضية؟</span><span class="en">How do I request a nursing visit?</span></span></summary><p><span class="ar">املأ نموذج الحجز في هذه الصفحة أو راسلنا على واتساب، وسنتواصل معك لتحديد الخدمة والموعد.</span><span class="en">Fill in the booking form on this page or message us on WhatsApp, and we will contact you to agree on the service and time.</span></p></details>
+<details><summary><span><span class="ar">هل أستطيع الحجز لأحد والديّ أو لشخص مسن؟</span><span class="en">Can I book for a parent or an elderly relative?</span></span></summary><p><span class="ar">نعم، يمكنك الحجز نيابة عن أي مريض. اذكر في الملاحظات حالته واحتياجاته.</span><span class="en">Yes, you can book on behalf of any patient. Describe the condition and needs in the notes.</span></p></details>
+<details><summary><span><span class="ar">ماذا أجهّز قبل وصول الممرض؟</span><span class="en">What should I prepare before the nurse arrives?</span></span></summary><p><span class="ar">جهّز التقارير الطبية وقائمة الأدوية التي يتناولها المريض، وأخبرنا بأي حساسية معروفة.</span><span class="en">Have the medical reports and a list of the patient's medications ready, and tell us about any known allergies.</span></p></details>
+<details><summary><span><span class="ar">هل تقدمون المتابعة بعد الخروج من المستشفى؟</span><span class="en">Do you offer follow-up after hospital discharge?</span></span></summary><p><span class="ar">نعم، نتابع المريض في المنزل بعد خروجه من المستشفى وفق خطة العلاج.</span><span class="en">Yes, we follow the patient at home after discharge, according to the treatment plan.</span></p></details>
+<details><summary><span><span class="ar">هل رفاد خدمة إسعاف؟</span><span class="en">Is Rifad an emergency service?</span></span></summary><p><span class="ar">لا. في الحالات الطارئة اتصل بالإسعاف أو توجّه إلى أقرب مستشفى فوراً.</span><span class="en">No. In an emergency, call an ambulance or go to the nearest hospital immediately.</span></p></details>
+</div>
+</section>
+
+<section id="book">
+<div class="wrap">
+<h2><span class="ar">احجز زيارة</span><span class="en">Book a visit</span></h2>
+<form class="form" id="bf" novalidate>
+<label><span class="ar">الاسم</span><span class="en">Name</span><input name="n" required autocomplete="name"></label>
+<label><span class="ar">رقم الهاتف</span><span class="en">Phone</span><input name="p" type="tel" dir="ltr" required autocomplete="tel"></label>
+<label><span class="ar">الخدمة</span><span class="en">Service</span><select name="s" required><option value="" data-ar="اختر الخدمة" data-en="Choose a service">اختر الخدمة</option><option value="0" data-ar="التمريض المنزلي" data-en="Home nursing">التمريض المنزلي</option><option value="1" data-ar="رعاية المرضى وكبار السن" data-en="Patient and elderly care">رعاية المرضى وكبار السن</option><option value="2" data-ar="قياس العلامات الحيوية" data-en="Vital signs monitoring">قياس العلامات الحيوية</option><option value="3" data-ar="العناية بالجروح والضمادات" data-en="Wound care and dressing">العناية بالجروح والضمادات</option><option value="4" data-ar="إعطاء الأدوية ومتابعة العلاج" data-en="Medication administration">إعطاء الأدوية ومتابعة العلاج</option><option value="5" data-ar="المتابعة بعد الخروج من المستشفى" data-en="Post-discharge follow-up">المتابعة بعد الخروج من المستشفى</option></select></label>
+<label><span class="ar">المنطقة</span><span class="en">Area</span><input name="a"></label>
+<label><span class="ar">الموعد المفضل</span><span class="en">Preferred time</span><input name="d"></label>
+<label class="full"><span class="ar">ملاحظات عن حالة المريض</span><span class="en">Notes about the patient</span><textarea name="m"></textarea></label>
+<div class="full"><button class="btn fill" type="submit"><span class="ar">أرسل الطلب عبر واتساب</span><span class="en">Send request on WhatsApp</span></button><p class="note"><span class="ar">يفتح الطلب في واتساب جاهزاً، وتراجعه قبل الإرسال.</span><span class="en">The request opens in WhatsApp ready to send, so you can review it first.</span></p></div>
+</form>
+</div>
+</section>
+
 <section class="contact" id="contact">
 <div class="wrap">
 <h2><span class="ar">رعايتكم … في منازلكم</span><span class="en">Your care … at your home</span></h2>
 <div class="rows">
-<a href="tel:+972567028862" dir="ltr">0567028862</a>
-<a href="mailto:rifad.care.ps@gmail.com" dir="ltr">rifad.care.ps@gmail.com</a>
+<a href="tel:+970567028862" dir="ltr">0567028862</a>
+<a href="mailto:rifad.care@gmail.com" dir="ltr">rifad.care@gmail.com</a>
 <span><span class="ar">غزة، فلسطين</span><span class="en">Gaza, Palestine</span></span>
 </div>
-<a class="btn fill" id="wa2" href="https://wa.me/972567028862" target="_blank" rel="noopener"><span class="ar">راسلنا على واتساب</span><span class="en">Message us on WhatsApp</span></a>
+<a class="btn fill" id="wa2" href="https://wa.me/970567028862" target="_blank" rel="noopener"><span class="ar">راسلنا على واتساب</span><span class="en">Message us on WhatsApp</span></a>
 </div>
 </section>
 </main>
@@ -147,12 +222,20 @@ footer{background:var(--ink);color:var(--mint);text-align:center;padding:22px;fo
 <script>
 (function(){
 var h=document.documentElement,b=document.getElementById('lang');
-function set(l){h.lang=l;h.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('rifad-lang',l)}catch(e){}
+function set(l){document.querySelectorAll('[data-ar]').forEach(function(e){e.textContent=e.getAttribute('data-'+l)});h.lang=l;h.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('rifad-lang',l)}catch(e){}
 var t=l==='ar'?'مرحباً، أريد طلب زيارة تمريضية':'Hello, I would like to request a nursing visit';
 ['wa1','wa2'].forEach(function(i){document.getElementById(i).href='https://wa.me/970567028862?text='+encodeURIComponent(t)})}
 var s='ar';try{s=localStorage.getItem('rifad-lang')||'ar'}catch(e){}
 set(s);
 b.addEventListener('click',function(){set(h.lang==='ar'?'en':'ar')});
+var bf=document.getElementById('bf');
+bf.addEventListener('submit',function(ev){ev.preventDefault();
+if(!bf.checkValidity()){bf.reportValidity();return}
+var ar=h.lang==='ar',g=function(k){return bf.elements[k].value.trim()},sv=bf.elements.s;
+var L=ar?['طلب زيارة تمريضية','الاسم','الهاتف','الخدمة','المنطقة','الموعد المفضل','ملاحظات']:['Nursing visit request','Name','Phone','Service','Area','Preferred time','Notes'];
+var t=[L[0],L[1]+': '+g('n'),L[2]+': '+g('p'),L[3]+': '+sv.options[sv.selectedIndex].textContent];
+if(g('a'))t.push(L[4]+': '+g('a'));if(g('d'))t.push(L[5]+': '+g('d'));if(g('m'))t.push(L[6]+': '+g('m'));
+window.open('https://wa.me/970567028862?text='+encodeURIComponent(t.join('\n')),'_blank','noopener')});
 })();
 </script>
 </body>
