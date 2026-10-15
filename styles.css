@@ -1,9 +1,7 @@
-
 /* ========================================
    RIFAD | Professional Home Healthcare
    Responsive Arabic & English Design
    ======================================== */
-
 :root {
   --green: #126B50;
   --green-dark: #084638;
@@ -19,7 +17,6 @@
   --shadow: 0 10px 30px rgba(8, 70, 56, .09);
   --shadow-hover: 0 16px 38px rgba(8, 70, 56, .15);
 }
-
 * {
   box-sizing: border-box;
 }
@@ -28,7 +25,6 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
-
 body {
   margin: 0;
   color: var(--text);
@@ -37,7 +33,6 @@ body {
   line-height: 1.85;
   -webkit-font-smoothing: antialiased;
 }
-
 img {
   display: block;
   max-width: 100%;
