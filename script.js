@@ -1,5 +1,5 @@
 // RIFAD starter website. Change the WhatsApp number below if it changes.
-const RIFAD_WHATSAPP = "970567028862";
+const RIFAD_WHATSAPP = "972567028862";
 const langButton = document.getElementById("languageToggle");
 let currentLang = "ar";
 
