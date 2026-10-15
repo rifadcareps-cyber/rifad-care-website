@@ -490,3 +490,251 @@ footer a:hover,
     padding: 30px 20px;
   }
 }
+
+/* RIFAD — Professional design refinement */
+:root {
+  --green: #126B50;
+  --green-dark: #084638;
+  --green-light: #E8F5F0;
+  --mint: #69BFA4;
+  --gold: #D6B46A;
+  --text: #24352E;
+  --muted: #68766F;
+  --white: #FFFFFF;
+  --background: #F8FBF9;
+  --border: #DDEAE3;
+  --radius: 22px;
+  --shadow: 0 10px 30px rgba(8, 70, 56, .09);
+  --shadow-hover: 0 16px 38px rgba(8, 70, 56, .15);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--background);
+  font-family: "Tajawal", "Cairo", Arial, sans-serif;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, .96);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 18px rgba(8, 70, 56, .04);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  color: var(--green-dark);
+  text-decoration: none;
+}
+
+.brand strong {
+  color: var(--green);
+  font-weight: 900;
+}
+
+.brand small {
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+button,
+.button {
+  font: inherit;
+  font-weight: 800;
+  border-radius: 16px;
+  transition: background .2s ease, transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-primary,
+button.button-primary {
+  background: var(--green);
+  color: var(--white);
+  border: 1px solid var(--green);
+  box-shadow: 0 8px 20px rgba(18, 107, 80, .12);
+}
+
+.button-primary:hover,
+button.button-primary:hover {
+  background: var(--green-dark);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.button-secondary,
+.button-outline {
+  background: var(--white);
+  color: var(--green);
+  border: 1px solid #C9DCD2;
+}
+
+.button-secondary:hover,
+.button-outline:hover {
+  background: var(--green-light);
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero h1 {
+  color: var(--green-dark);
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: -.6px;
+  text-wrap: balance;
+}
+
+.hero-text {
+  color: var(--muted);
+  line-height: 2;
+}
+
+.hero img {
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+#services,
+#about,
+#booking,
+#contact {
+  scroll-margin-top: 100px;
+}
+
+.services-grid,
+.features-grid {
+  gap: 22px;
+}
+
+.service-card,
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(8, 70, 56, .045);
+  transition: transform .2s ease, box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.service-card:hover,
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: #B7D8C9;
+  box-shadow: var(--shadow-hover);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid #D5E3DB;
+  border-radius: 14px;
+  padding: 13px 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(18, 107, 80, .18);
+  border-color: var(--green);
+}
+
+footer {
+  background: var(--green-dark);
+  color: var(--white);
+}
+
+footer a {
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .hero {
+    padding-top: 24px;
+    padding-bottom: 36px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3.4rem);
+    line-height: 1.4;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    line-height: 2;
+  }
+
+  .hero img {
+    border-radius: 28px;
+  }
+
+  .services-grid,
+  .features-grid {
+    gap: 14px;
+  }
+
+  .service-card,
+  .feature-card {
+    border-radius: 18px;
+  }
+
+  .button {
+    min-height: 48px;
+    padding: 10px 16px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
