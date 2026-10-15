@@ -1,740 +1,159 @@
-/* ========================================
-   RIFAD | Professional Home Healthcare
-   Responsive Arabic & English Design
-   ======================================== */
-:root {
-  --green: #126B50;
-  --green-dark: #084638;
-  --green-light: #E8F5F0;
-  --mint: #69BFA4;
-  --gold: #D6B46A;
-  --text: #24352E;
-  --muted: #68766F;
-  --white: #FFFFFF;
-  --background: #F8FBF9;
-  --border: #DDEAE3;
-  --radius: 20px;
-  --shadow: 0 10px 30px rgba(8, 70, 56, .09);
-  --shadow-hover: 0 16px 38px rgba(8, 70, 56, .15);
-}
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-body {
-  margin: 0;
-  color: var(--text);
-  background: var(--background);
-  font-family: "Cairo", "Tajawal", Arial, sans-serif;
-  line-height: 1.85;
-  -webkit-font-smoothing: antialiased;
-}
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  color: var(--green);
-  text-decoration: none;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-button,
-a,
-input,
-textarea,
-select {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button,
-.btn,
-.button {
-  cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: var(--green-dark);
-  line-height: 1.4;
-  font-weight: 800;
-}
-
-p {
-  color: var(--muted);
-}
-
-::selection {
-  background: #CDEADF;
-  color: var(--green-dark);
-}
-
-/* Header and brand */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 14px clamp(18px, 5vw, 64px);
-  background: rgba(255, 255, 255, .96);
-  border-bottom: 1px solid rgba(18, 107, 80, .10);
-  backdrop-filter: blur(14px);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--green);
-  font-weight: 800;
-}
-
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--green);
-}
-
-.brand-mark svg {
-  width: 54px;
-  height: 54px;
-}
-
-nav a,
-.site-nav a {
-  color: var(--text);
-  font-weight: 600;
-  transition: color .2s ease;
-}
-
-nav a:hover,
-.site-nav a:hover {
-  color: var(--green);
-}
-
-/* Main buttons */
-
-.btn,
-.button,
-button,
-a.btn,
-a.button {
-  border-radius: 999px;
-  transition: transform .22s ease,
-              box-shadow .22s ease,
-              background .22s ease;
-}
-
-.btn-primary,
-.button-primary,
-.btn:not(.btn-outline) {
-  background: var(--green);
-  color: var(--white);
-  border: 1px solid var(--green);
-}
-
-.btn-outline,
-.button-outline {
-  background: var(--white);
-  color: var(--green);
-  border: 1px solid var(--border);
-}
-
-.btn:hover,
-.button:hover,
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(8, 70, 56, .13);
-}
-
-/* Main page and hero */
-
-main {
-  overflow: hidden;
-}
-
-.hero {
-  position: relative;
-  padding: clamp(38px, 7vw, 90px) clamp(18px, 5vw, 64px);
-  background:
-    radial-gradient(
-      circle at 8% 15%,
-      rgba(105, 191, 164, .13),
-      transparent 32%
-    ),
-    linear-gradient(135deg, #FFFFFF, #F0F8F4);
-}
-
-.hero h1 {
-  margin: 14px 0 22px;
-  font-size: clamp(2.2rem, 5.5vw, 4.5rem);
-  letter-spacing: -.8px;
-}
-
-.hero p {
-  max-width: 650px;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-}
-
-.hero img {
-  border-radius: 28px;
-  object-fit: cover;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-/* Sections */
-
-section {
-  padding: clamp(38px, 6vw, 76px) clamp(18px, 5vw, 64px);
-}
-
-section h2 {
-  margin-top: 0;
-  margin-bottom: 28px;
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-}
-
-section h2::after {
-  content: "";
-  display: block;
-  width: 54px;
-  height: 4px;
-  margin-top: 12px;
-  border-radius: 10px;
-  background: var(--gold);
-}
-
-/* Services and cards */
-
-.services-grid,
-.services-list,
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.card,
-.service-card,
-.service-item,
-.feature-card {
-  min-width: 0;
-  overflow: hidden;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.card:hover,
-.service-card:hover,
-.service-item:hover,
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-}
-
-.card img,
-.service-card img,
-.service-item img {
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-content,
-.service-content {
-  padding: 22px;
-}
-
-.card h3,
-.service-card h3,
-.service-item h3 {
-  margin-top: 0;
-  color: var(--green-dark);
-}
-
-.card p,
-.service-card p,
-.service-item p {
-  margin-bottom: 0;
-}
-
-/* Why RIFAD */
-
-.features,
-.why-rifad {
-  background: var(--green-light);
-}
-
-.features-grid,
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.features-grid > *,
-.benefits-grid > * {
-  padding: 20px;
-  text-align: center;
-}
-
-.features-grid svg,
-.benefits-grid svg {
-  color: var(--green);
-}
-
-/* About section */
-
-.about {
-  background: var(--white);
-}
-
-.about img {
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-/* Forms */
-
-form {
-  width: 100%;
-}
-
-input,
-textarea,
-select {
-  width: 100%;
-  max-width: 100%;
-  padding: 13px 15px;
-  color: var(--text);
-  background: var(--white);
-  border: 1px solid #D5E4DC;
-  border-radius: 12px;
-}
-
-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid var(--mint);
-  border-color: var(--green);
-}
-
-/* Contact and footer */
-
-.contact,
-.contact-section {
-  background: var(--green-light);
-}
-
-footer,
-.site-footer {
-  padding: 36px clamp(18px, 5vw, 64px);
-  color: var(--white);
-  background: var(--green-dark);
-}
-
-footer h2,
-footer h3,
-footer p,
-footer a,
-.site-footer h2,
-.site-footer h3,
-.site-footer p,
-.site-footer a {
-  color: var(--white);
-}
-
-footer a:hover,
-.site-footer a:hover {
-  color: var(--mint);
-}
-
-/* Floating and icon buttons */
-
-.whatsapp,
-.whatsapp-button {
-  transition: transform .2s ease;
-}
-
-.whatsapp:hover,
-.whatsapp-button:hover {
-  transform: scale(1.05);
-}
-
-/* Accessibility */
-
-:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
-  }
-}
-
-/* Tablet */
-
-@media (max-width: 900px) {
-  .services-grid,
-  .services-list,
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .features-grid,
-  .benefits-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .site-header {
-    gap: 12px;
-    padding: 12px 20px;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-  body {
-    font-size: 15px;
-  }
-
-  .site-header {
-    padding: 10px 15px;
-    gap: 10px;
-  }
-
-  .brand-mark svg {
-    width: 42px;
-    height: 42px;
-  }
-
-  .hero {
-    padding: 30px 18px 42px;
-  }
-
-  .hero h1 {
-    font-size: clamp(2rem, 9vw, 3rem);
-    line-height: 1.45;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .hero-actions a,
-  .hero-actions button {
-    width: 100%;
-    min-height: 48px;
-  }
-
-  section {
-    padding: 38px 18px;
-  }
-
-  .services-grid,
-  .services-list,
-  .cards-grid,
-  .features-grid,
-  .benefits-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-  }
-
-  .card,
-  .service-card,
-  .service-item,
-  .feature-card {
-    border-radius: 16px;
-  }
-
-  footer,
-  .site-footer {
-    padding: 30px 20px;
-  }
-}
-
-/* RIFAD — Professional design refinement */
-:root {
-  --green: #126B50;
-  --green-dark: #084638;
-  --green-light: #E8F5F0;
-  --mint: #69BFA4;
-  --gold: #D6B46A;
-  --text: #24352E;
-  --muted: #68766F;
-  --white: #FFFFFF;
-  --background: #F8FBF9;
-  --border: #DDEAE3;
-  --radius: 22px;
-  --shadow: 0 10px 30px rgba(8, 70, 56, .09);
-  --shadow-hover: 0 16px 38px rgba(8, 70, 56, .15);
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-body {
-  margin: 0;
-  color: var(--text);
-  background: var(--background);
-  font-family: "Tajawal", "Cairo", Arial, sans-serif;
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, .96);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 18px rgba(8, 70, 56, .04);
-  backdrop-filter: blur(12px);
-}
-
-.brand {
-  color: var(--green-dark);
-  text-decoration: none;
-}
-
-.brand strong {
-  color: var(--green);
-  font-weight: 900;
-}
-
-.brand small {
-  color: var(--muted);
-  letter-spacing: 2px;
-}
-
-button,
-.button {
-  font: inherit;
-  font-weight: 800;
-  border-radius: 16px;
-  transition: background .2s ease, transform .2s ease,
-    box-shadow .2s ease;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.button-primary,
-button.button-primary {
-  background: var(--green);
-  color: var(--white);
-  border: 1px solid var(--green);
-  box-shadow: 0 8px 20px rgba(18, 107, 80, .12);
-}
-
-.button-primary:hover,
-button.button-primary:hover {
-  background: var(--green-dark);
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
-}
-
-.button-secondary,
-.button-outline {
-  background: var(--white);
-  color: var(--green);
-  border: 1px solid #C9DCD2;
-}
-
-.button-secondary:hover,
-.button-outline:hover {
-  background: var(--green-light);
-}
-
-.hero {
-  position: relative;
-  isolation: isolate;
-}
-
-.hero h1 {
-  color: var(--green-dark);
-  font-weight: 900;
-  line-height: 1.35;
-  letter-spacing: -.6px;
-  text-wrap: balance;
-}
-
-.hero-text {
-  color: var(--muted);
-  line-height: 2;
-}
-
-.hero img {
-  object-fit: cover;
-  border-radius: 32px;
-}
-
-section {
-  scroll-margin-top: 90px;
-}
-
-#services,
-#about,
-#booking,
-#contact {
-  scroll-margin-top: 100px;
-}
-
-.services-grid,
-.features-grid {
-  gap: 22px;
-}
-
-.service-card,
-.feature-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 6px 20px rgba(8, 70, 56, .045);
-  transition: transform .2s ease, box-shadow .2s ease,
-    border-color .2s ease;
-}
-
-.service-card:hover,
-.feature-card:hover {
-  transform: translateY(-5px);
-  border-color: #B7D8C9;
-  box-shadow: var(--shadow-hover);
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  font: inherit;
-  color: var(--text);
-  background: var(--white);
-  border: 1px solid #D5E3DB;
-  border-radius: 14px;
-  padding: 13px 15px;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid rgba(18, 107, 80, .18);
-  border-color: var(--green);
-}
-
-footer {
-  background: var(--green-dark);
-  color: var(--white);
-}
-
-footer a {
-  color: inherit;
-}
-
-@media (max-width: 768px) {
-  .site-header {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-
-  .hero {
-    padding-top: 24px;
-    padding-bottom: 36px;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.2rem, 8vw, 3.4rem);
-    line-height: 1.4;
-  }
-
-  .hero-text {
-    font-size: 1rem;
-    line-height: 2;
-  }
-
-  .hero img {
-    border-radius: 28px;
-  }
-
-  .services-grid,
-  .features-grid {
-    gap: 14px;
-  }
-
-  .service-card,
-  .feature-card {
-    border-radius: 18px;
-  }
-
-  .button {
-    min-height: 48px;
-    padding: 10px 16px;
-  }
-
-  input,
-  select,
-  textarea {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-  }
-}
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>رفاد | Rifad Home Care</title>
+<meta name="description" content="رفاد للرعاية الصحية والتمريض المنزلي في غزة. Rifad home healthcare and nursing services in Gaza.">
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#062A23;--green:#0F6B57;--gold:#C9A54B;--mint:#CFE8DC;--wash:#F1F7F4;--text:#1E3A33}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+html[lang=ar] .en,html[lang=en] .ar{display:none!important}
+body{font-family:'Tajawal',sans-serif;color:var(--text);background:#fff;line-height:1.7;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:5;background:var(--ink);color:var(--mint)}
+header .wrap{display:flex;align-items:center;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-inline-end:auto;font-family:'Reem Kufi',sans-serif;font-size:28px;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:999px;font:700 17px 'Tajawal',sans-serif;text-decoration:none;border:2px solid var(--gold);cursor:pointer}
+.btn.fill{background:var(--gold);color:var(--ink)}
+.btn.line{background:none;color:var(--mint)}
+.btn.sm{min-height:40px;padding:0 18px;font-size:15px}
+.hero{background:var(--ink);color:#F6F1E4;text-align:center;padding:36px 0 84px;overflow:hidden}
+.pulse{width:100%;max-width:760px;margin:0 auto;display:block}
+.pulse path{fill:none;stroke:var(--gold);stroke-width:6;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s .2s ease-out forwards}
+.pulse .heart{fill:var(--gold);stroke:none;stroke-dasharray:none;animation:none;transform-box:fill-box;transform-origin:center;opacity:0;animation:beat 2.4s 2.4s ease-in-out infinite,show .5s 2.2s forwards}
+.pulse .cross{fill:var(--ink);stroke:none;stroke-dasharray:none;animation:none}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes show{to{opacity:1}}
+@keyframes beat{0%,60%,100%{transform:scale(1)}72%{transform:scale(1.14)}84%{transform:scale(1)}}
+.name{font-family:'Reem Kufi',sans-serif;font-size:clamp(88px,22vw,170px);line-height:1;color:var(--gold);margin-top:6px}
+.latin{font-weight:700;font-size:clamp(22px,5vw,34px);letter-spacing:.7em;padding-inline-start:.7em;margin-top:6px}
+h1{font-family:'Reem Kufi',sans-serif;font-weight:600;font-size:clamp(34px,7vw,56px);line-height:1.3;margin:34px 0 14px;color:#fff}
+.lead{max-width:34em;margin:0 auto 30px;color:var(--mint)}
+.cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+section{padding:76px 0}
+h2{font-family:'Reem Kufi',sans-serif;font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.3;color:var(--ink);margin-bottom:34px}
+.services{background:var(--wash)}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));column-gap:48px}
+.item{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-top:2px solid var(--gold)}
+.ico{flex:none;width:56px;height:56px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.ico svg{width:30px;height:30px;fill:none;stroke:var(--gold);stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.item h3{font-size:21px;line-height:1.35;color:var(--ink)}
+.item p{font-size:15.5px;color:#456158}
+.steps{position:relative;max-width:640px;padding-inline-start:46px}
+.steps:before{content:"";position:absolute;inset-block:8px;inset-inline-start:13px;width:0;border-inline-start:3px solid var(--gold)}
+.step{position:relative;padding-bottom:34px}
+.step:before{content:"";position:absolute;inset-inline-start:-44px;top:6px;width:20px;height:20px;border-radius:50%;background:#fff;border:5px solid var(--green)}
+.step h3{font-size:22px;color:var(--ink)}
+.about{background:var(--ink);color:var(--mint)}
+.about h2{color:var(--gold);margin-bottom:10px}
+.about .en-name{font-weight:700;font-size:22px;color:#fff;margin-bottom:18px}
+.about p{max-width:34em}
+.contact{text-align:center}
+.contact .rows{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;margin:26px 0 32px;font-size:18px}
+footer{background:var(--ink);color:var(--mint);text-align:center;padding:22px;font-size:14.5px;border-top:1px solid #1d4a3f}
+@media(prefers-reduced-motion:reduce){.pulse path{animation:none;stroke-dashoffset:0}.pulse .heart{animation:none;opacity:1}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8v10H3zM9 21v-6h6v6"/></symbol>
+<symbol id="i-care" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a5 5 0 0 1 10 0v3"/><circle cx="17" cy="9" r="2.2"/><path d="M15.5 21v-2a4 4 0 0 1 5.5-3.5"/></symbol>
+<symbol id="i-pulse" viewBox="0 0 24 24"><path d="M2 12h5l2-6 4 12 2-6h7"/></symbol>
+<symbol id="i-band" viewBox="0 0 24 24"><g transform="rotate(-35 12 12)"><rect x="2" y="8" width="20" height="8" rx="4"/><path d="M9 8v8M15 8v8"/></g></symbol>
+<symbol id="i-pill" viewBox="0 0 24 24"><g transform="rotate(-35 12 12)"><rect x="3" y="8.5" width="18" height="7" rx="3.5"/><path d="M12 8.5v7"/></g></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7.5 12.5l3 3 6-6"/></symbol>
+</svg>
+
+<header>
+<div class="wrap">
+<a class="brand" href="#top" aria-label="Rifad"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#C9A54B" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 16 17 4l14 12v13H3z"/><path d="M17 13v10M12 18h10"/></svg><span class="ar">رفاد</span><span class="en">Rifad</span></a>
+<button class="btn line sm" id="lang" type="button"><span class="ar">EN</span><span class="en">عربي</span></button>
+<a class="btn fill sm" href="#contact"><span class="ar">احجز الآن</span><span class="en">Book now</span></a>
+</div>
+</header>
+
+<main id="top">
+<div class="hero">
+<div class="wrap">
+<svg class="pulse" viewBox="0 0 1000 330" role="img" aria-label="A heartbeat line rising into the roof of a house">
+<path pathLength="1" d="M0 260 H330 L352 260 L372 224 L392 260 H420 L500 90 L580 260 H610 L634 312 L660 260 H1000"/>
+<path pathLength="1" d="M548 192 V148 H574 V243"/>
+<g class="heart"><path d="M500 239 C457 211 464 179 484 179 C493 179 500 188 500 196 C500 188 507 179 516 179 C536 179 543 211 500 239Z"/></g>
+<rect class="cross" x="494" y="188" width="12" height="28"/><rect class="cross" x="486" y="196" width="28" height="12"/>
+</svg>
+<div class="name">رفاد</div>
+<div class="latin" dir="ltr">RIFAD</div>
+<h1><span class="ar">رعاية تثق بها، في منزلك</span><span class="en">Trusted care, right at home</span></h1>
+<p class="lead"><span class="ar">رفاد تقرّب خدمات التمريض والرعاية الصحية إليك، من خلال اهتمام يراعي احتياجات المريض وراحة العائلة.</span><span class="en">Rifad brings nursing and healthcare to your door, with attention to the patient's needs and the family's peace of mind.</span></p>
+<div class="cta">
+<a class="btn fill" id="wa1" href="https://wa.me/970567028862" target="_blank" rel="noopener"><span class="ar">اطلب زيارة تمريضية</span><span class="en">Request a nursing visit</span></a>
+<a class="btn line" href="#services"><span class="ar">اكتشف خدماتنا</span><span class="en">Explore our services</span></a>
+</div>
+</div>
+</div>
+
+<section class="services" id="services">
+<div class="wrap">
+<h2><span class="ar">خدماتنا</span><span class="en">Our services</span></h2>
+<div class="list">
+<div class="item"><div class="ico"><svg><use href="#i-home"/></svg></div><div><h3><span class="ar">التمريض المنزلي</span><span class="en">Home nursing</span></h3><p><span class="ar">ممرض مؤهل يصل إلى منزلك ويتابع حالة المريض.</span><span class="en">A qualified nurse comes to your home and follows the patient's condition.</span></p></div></div>
+<div class="item"><div class="ico"><svg><use href="#i-care"/></svg></div><div><h3><span class="ar">رعاية المرضى وكبار السن</span><span class="en">Patient and elderly care</span></h3><p><span class="ar">رعاية يومية بلطف واحترام داخل بيئة المريض المألوفة.</span><span class="en">Daily care with kindness, in the patient's own familiar surroundings.</span></p></div></div>
+<div class="item"><div class="ico"><svg><use href="#i-pulse"/></svg></div><div><h3><span class="ar">قياس العلامات الحيوية</span><span class="en">Vital signs monitoring</span></h3><p><span class="ar">قياس الضغط والنبض والحرارة والسكر ومتابعتها.</span><span class="en">Blood pressure, pulse, temperature and glucose checks, tracked over time.</span></p></div></div>
+<div class="item"><div class="ico"><svg><use href="#i-band"/></svg></div><div><h3><span class="ar">العناية بالجروح والضمادات</span><span class="en">Wound care and dressing</span></h3><p><span class="ar">تنظيف الجروح وتغيير الضمادات بأسلوب معقّم وآمن.</span><span class="en">Sterile, safe wound cleaning and dressing changes.</span></p></div></div>
+<div class="item"><div class="ico"><svg><use href="#i-pill"/></svg></div><div><h3><span class="ar">إعطاء الأدوية ومتابعة العلاج</span><span class="en">Medication administration</span></h3><p><span class="ar">إعطاء الأدوية في مواعيدها ومتابعة الالتزام بالعلاج.</span><span class="en">Medication given on schedule, with follow-up on the treatment plan.</span></p></div></div>
+<div class="item"><div class="ico"><svg><use href="#i-check"/></svg></div><div><h3><span class="ar">المتابعة بعد الخروج من المستشفى</span><span class="en">Post-discharge follow-up</span></h3><p><span class="ar">نكمل رعاية المريض في المنزل بعد مغادرته المستشفى.</span><span class="en">We continue the patient's care at home after leaving hospital.</span></p></div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2><span class="ar">كيف تتم الزيارة</span><span class="en">How a visit works</span></h2>
+<div class="steps">
+<div class="step"><h3><span class="ar">تتواصل معنا</span><span class="en">You contact us</span></h3><p><span class="ar">أرسل رسالة عبر واتساب أو اتصل بنا واذكر حالة المريض.</span><span class="en">Message us on WhatsApp or call, and tell us about the patient.</span></p></div>
+<div class="step"><h3><span class="ar">نحدد الاحتياج</span><span class="en">We agree on the care</span></h3><p><span class="ar">نتفق على الخدمة المناسبة والموعد الذي يناسبكم.</span><span class="en">We agree on the right service and a time that suits you.</span></p></div>
+<div class="step"><h3><span class="ar">يصلك الممرض إلى المنزل</span><span class="en">The nurse arrives at your home</span></h3><p><span class="ar">يقدّم الرعاية ويطمئنكم على حالة المريض.</span><span class="en">Care is given, and you are kept informed about the patient.</span></p></div>
+</div>
+</div>
+</section>
+
+<section class="about">
+<div class="wrap">
+<h2><span class="ar">عبد العزيز عابد</span><span class="en">Abdulaziz Abed</span></h2>
+<div class="en-name ar" dir="ltr">Abdulaziz Abed</div>
+<p><span class="ar">بكالوريوس التمريض العام، وماجستير العناية المركزة والحالات الحرجة. مؤسس رفاد، ويقدّم الرعاية بخبرة تعرف كيف تتصرف حين تكون الحالة حرجة.</span><span class="en">B.Sc. in General Nursing and M.Sc. in Critical Care and Emergency. Founder of Rifad, bringing critical-care training to everyday care at home.</span></p>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap">
+<h2><span class="ar">رعايتكم … في منازلكم</span><span class="en">Your care … at your home</span></h2>
+<div class="rows">
+<a href="tel:+970567028862" dir="ltr">0567028862</a>
+<a href="mailto:rifad.care@gmail.com" dir="ltr">rifad.care@gmail.com</a>
+<span><span class="ar">غزة، فلسطين</span><span class="en">Gaza, Palestine</span></span>
+</div>
+<a class="btn fill" id="wa2" href="https://wa.me/970567028862" target="_blank" rel="noopener"><span class="ar">راسلنا على واتساب</span><span class="en">Message us on WhatsApp</span></a>
+</div>
+</section>
+</main>
+<footer>© 2026 <span class="ar">رفاد للرعاية الصحية والتمريض المنزلي</span><span class="en">Rifad Home Healthcare &amp; Nursing</span></footer>
+
+<script>
+(function(){
+var h=document.documentElement,b=document.getElementById('lang');
+function set(l){h.lang=l;h.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('rifad-lang',l)}catch(e){}
+var t=l==='ar'?'مرحباً، أريد طلب زيارة تمريضية':'Hello, I would like to request a nursing visit';
+['wa1','wa2'].forEach(function(i){document.getElementById(i).href='https://wa.me/970567028862?text='+encodeURIComponent(t)})}
+var s='ar';try{s=localStorage.getItem('rifad-lang')||'ar'}catch(e){}
+set(s);
+b.addEventListener('click',function(){set(h.lang==='ar'?'en':'ar')});
+})();
+</script>
+</body>
+</html>
